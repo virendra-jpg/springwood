@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <form id="weatherForm">
+      <div>
+        <input type="text" id="location" placeholder="Enter a location..."><br></br>
+      </div>
+      <h3><B>OR</B></h3>
+      <div></div>
+        <input type="text" id="pincode" placeholder="Enter a pincode..."><br></br>
+      </div>
+      <p> Select Unit </p>
+      <select id="Unit" name="Unit">
+        <option value="metric">°C</option>
+        <option value="imperial">°F</option>
+        <option value="standard">K</option>
+      </select>
+      <br></br>
+      <input type="submit" value="Get Weather" id="submit">
+    </form>
+    <div id="weather"></div>
+    <div id="error"></div>
+    <script type="module" src="analytics_log_event.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module">
+      import { getWeather } from './app.js';
+
+      async function handleClick(event) {
+        event.preventDefault(); // prevent the form from submitting
+        
+        try {
+          const weather = await getWeather();
+          // handle the weather data
+        } catch (error) {
+          // handle the error
+        }
+      }
+
+      const form = document.querySelector('#weatherForm');
+      form.addEventListener('submit', handleClick);
+    </script>
+    
+    <script src=
+"https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+    </script>
+
+  </body>
+</html>
