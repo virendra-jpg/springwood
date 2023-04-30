@@ -43,12 +43,12 @@ async function getWeather() {
       <img src="${src}" />
       <h1>${data.city.name}</h1>
       <h2>${data.list[0].dt_txt}</h2>
-      <p>Temperature: ${data.list[0].main.temp}°C</p>
+      <p>Temperature: ${data.list[0].main.temp}</p>
       <p>Humidity: ${data.list[0].main.humidity}%</p>
       <p>Wind Speed: ${data.list[0].wind.speed} m/s</p>
-      <p>Feels Like: ${data.list[0].main.feels_like}°C</p>
-      <p>Max Temp: ${data.list[0].main.temp_max}°C</p>
-      <p>Min Temp: ${data.list[0].main.temp_min}°C</p>
+      <p>Feels Like: ${data.list[0].main.feels_like}</p>
+      <p>Max Temp: ${data.list[0].main.temp_max}</p>
+      <p>Min Temp: ${data.list[0].main.temp_min}</p>
       <p>Weather Condition: ${data.list[0].weather[0].description}</p>
     `;
     for (var i = 1; i < data.list.length; i += 8) {
