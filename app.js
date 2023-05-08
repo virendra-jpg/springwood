@@ -78,6 +78,7 @@ async function getWeather() {
                       <p class="text-muted mb-0">Feels like :${data.list[0].main.feels_like}${units}</p>
                       <p class="text-muted mb-0">Humidity :${data.list[0].main.humidity}%</p>
                       <p class="text-muted mb-0">Wind: ${data.list[0].wind.speed}m/s</p>
+                      <p class="small"><strong>${data.list[1].weather[0].description}</strong></p>
 
                     </div>
                     <div>
