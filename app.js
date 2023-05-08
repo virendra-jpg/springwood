@@ -4,10 +4,10 @@ import { logWeatherEvents } from "./analytics_log_event.js";
 async function getWeather() {
   try {
     const location = document.getElementById("location").value;
-    // const pincode = document.getElementById("pincode").value;
+
     var unit = document.getElementById("Unit").value;
 
-    //writing if else loop to show choosen
+    //writing if else loop to show choosen unit
     var units;
     if(unit === "metric"){
        units = "°C";
