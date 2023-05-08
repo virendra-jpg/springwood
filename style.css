@@ -18,7 +18,7 @@ form {
 input[type="text"] {
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid black;
   width: 300px;
   margin-right: 10px;
 }

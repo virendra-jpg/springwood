@@ -4,7 +4,7 @@ import { logWeatherEvents } from "./analytics_log_event.js";
 async function getWeather() {
   try {
     const location = document.getElementById("location").value;
-    const pincode = document.getElementById("pincode").value;
+    // const pincode = document.getElementById("pincode").value;
     var unit = document.getElementById("Unit").value;
 
     //writing if else loop to show choosen
@@ -21,17 +21,10 @@ async function getWeather() {
     //setting url for fetching data
     let url;
     if (location.length === 0) {
-      if (pincode.length === 0) {
+      
         window.alert("Please enter a location or a pincode.");
         return;
-      }
-      url =
-        "https://api.openweathermap.org/data/2.5/forecast?zip=" +
-        pincode +
-        "&units=" +
-        unit +
-        "&appid=4e8c42d2514b6fc0fa6c45dd18d3788f";
-    } else {
+      }  else {
       url =
         "https://api.openweathermap.org/data/2.5/forecast?q=" +
         location +
