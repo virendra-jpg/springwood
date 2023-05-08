@@ -11,16 +11,25 @@ const firebaseConfig = {
   measurementId: "G-KTS0MQQPQY"
 };
 
-function logFilterValues({ location, pincode, personname, emailid, phoneno }) {
+function logWeatherEvents({ city, temperature, humidity, weather }) {
   const app = initializeApp(firebaseConfig);
 
   const analytics = getAnalytics(app);
-  logEvent(analytics, "filter1", { name: "Location", value: location });
+  logEvent(analytics, "weather_search", { city: city });
 
-  logEvent(analytics, "filter2", { name: "PINCODE", value: pincode });
+  if (temperature) {
+    logEvent(analytics, "temperature_search", { city: city, temperature: temperature });
+  }
 
-  // logEvent(analytics, "identity", { name: personname, email: emailid, phone: phoneno });
-  // console.log("Identity event logged");
+  if (humidity) {
+    logEvent(analytics, "humidity_search", { city: city, humidity: humidity });
+  }
+
+  if (weather) {
+    logEvent(analytics, "weather_search_details", { city: city, weather: weather });
+  }
+
+  console.log("Weather events logged");
 }
 
-export { logFilterValues };
+export { logWeatherEvents };

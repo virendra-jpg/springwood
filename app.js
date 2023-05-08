@@ -1,4 +1,4 @@
-import { logFilterValues } from "./analytics_log_event.js";
+import { logWeatherEvents } from "./analytics_log_event.js";
 /* JavaScript code for the weather app */
 
 async function getWeather() {
@@ -47,7 +47,7 @@ async function getWeather() {
     }
 
     const data = await response.json();
-    console.log(data);
+    
 
     // Display the weather information in the #weather div
     const weather = document.getElementById("weather");
@@ -236,7 +236,7 @@ async function getWeather() {
 
 
     // log events on firebase
-    logFilterValues({ location: data.city.name });
+    logWeatherEvents({ city: data.city.name , temperature: data.list[0].main.temp, humidity: data.list[0].main.humidity, weather:data.list[0].weather[0].description, });
 
   } catch (error) {
     console.error("Error:", error);
