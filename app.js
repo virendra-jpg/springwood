@@ -30,7 +30,7 @@ async function getWeather() {
         location +
         "&units=" +
         unit +
-        "&appid=4e8c42d2514b6fc0fa6c45dd18d3788f";
+        "&appid=efbd1d2262db8e056860ca05ca2f9cf1";
     }
 
     const response = await fetch(url);
